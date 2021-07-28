@@ -1,0 +1,5 @@
+{
+    "svelte.plugin.svelte.format.config.singleQuote": true,
+    "svelte.plugin.svelte.format.config.svelteSortOrder": "options-scripts-markup-styles",
+    "svelte.plugin.svelte.format.config.svelteStrictMode": true
+}
