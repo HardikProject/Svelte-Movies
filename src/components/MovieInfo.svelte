@@ -1,5 +1,4 @@
 <script>
-
 </script>
 
 MovieInfo
@@ -29,7 +28,7 @@ MovieInfo
   }
 
   h1 {
-    font-family: 'Abel', sans-serif;
+    font-family: "Abel", sans-serif;
     font-size: 48px;
     margin: 0;
   }
@@ -41,7 +40,7 @@ MovieInfo
   }
 
   p {
-    font-family: 'Abel', sans-serif;
+    font-family: "Abel", sans-serif;
     font-size: 18px;
     line-height: 26px;
   }
