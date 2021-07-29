@@ -1,6 +1,14 @@
 <script>
+  export let heading;
 </script>
-Grid
+
+<div class="wrapper">
+  <h1>{heading}</h1>
+  <div class="content">
+    <slot />
+  </div>
+</div>
+
 <style>
   .wrapper {
     max-width: 1280px;

@@ -28,6 +28,12 @@
     }
   };
 
+  const handleSearch = (event) => {
+    searchTerm = event.detail.searchText;
+    movie.movies = [];
+    handleFetchMovies(false, searchTerm);
+  };
+
   onMount(async () => {
     handleFetchMovies(false, searchTerm);
   });
@@ -43,8 +49,14 @@
   />
 {/if}
 
-<Search />
-<Grid />
+<Search on:search={handleSearch} />
+<Grid heading={searchTerm ? "Search Result" : "Popular"}>
+  <div>1</div>
+  <div>1</div>
+  <div>1</div>
+  <div>1</div>
+  <div>1</div>
+</Grid>
 <Thumb />
 <LoadMoreButton />
 <Spinner />

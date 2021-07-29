@@ -1,7 +1,27 @@
 <script>
+  import {createEventDispatcher} from 'svelte';
+
+  const dispatch = createEventDispatcher();
+
+  let searchText;
+  let timeOut;
+
+  $:{
+    if(searchText){
+      clearTimeout(timeOut);
+      timeOut = setTimeout(() => {
+        dispatch('search',{searchText})
+      }, 500);
+    }
+  }
 </script>
 
-Search
+<div class="wrapper">
+  <div class="content">
+    <i class="fa fa-search fa-2x" name='search' />
+    <input type="text" placeholder="Search Movie" bind:value={searchText}>
+  </div>
+</div>
 
 <style>
   .wrapper {
