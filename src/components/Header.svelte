@@ -1,33 +1,28 @@
 <script>
-  const svelteLogo = "/images/svelte-logo.svg";
-  const tmdbLogo = "/images/tmdb_logo.svg";
+  const svelteLogo = "/images/svelte.svg";
 </script>
 
-<header class="wrapper">
-  <div class="content">
-    <h1>Svelte Movie</h1>
-  </div>
-</header>
+<div class="content">
+  <img src={svelteLogo} alt="Svelte Logo" class="svelte-logo" />
+  <h1>Svelte Movie</h1>
+</div>
 
 <style>
-  .wrapper {
-    background: #1c1c1c;
-    padding: 0 20px;
-  }
-
   .content {
+    padding: 0 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    max-width: 1280px;
-    height: 8vh;
     margin: 0 auto;
     box-sizing: border-box;
+    background: #1c1c1c;
+    color: azure;
   }
 
-  h1 {
-    color: white;
+  .svelte-logo {
+    width: 50px;
+    height: 50px;
   }
 
   @media screen and (max-width: 500px) {
@@ -38,5 +33,9 @@
     h1 {
       font-size: 25px;
     }
+    .svelte-logo {
+    width: 40px;
+    height: 40px;
+  }
   }
 </style>

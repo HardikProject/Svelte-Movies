@@ -11,6 +11,7 @@
   import Thumb from "../components/Thumb.svelte";
   import LoadMoreButton from "../components/LoadMoreButton.svelte";
   import Spinner from "../components/Spinner.svelte";
+  import Header from "../components/Header.svelte";
 
   let movie = { movies: [] };
   let isLoading;
@@ -48,7 +49,6 @@
     text={movie.heroImage.overview}
   />
 {/if}
-
 <Search on:search={handleSearch} />
 <Grid heading={searchTerm ? "Search Result" : "Popular"}>
   <div>1</div>
