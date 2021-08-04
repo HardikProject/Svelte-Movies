@@ -7,7 +7,7 @@
   let timeOut;
 
   $:{
-    if(searchText){
+    if(searchText !== undefined){
       clearTimeout(timeOut);
       timeOut = setTimeout(() => {
         dispatch('search',{searchText})

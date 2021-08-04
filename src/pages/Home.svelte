@@ -2,7 +2,7 @@
   import { fetchMovies } from "../api.js";
   import { onMount } from "svelte";
 
-  import { IMAGE_BASE_URL, BACKDROP_SIZE } from "../config.js";
+  import { IMAGE_BASE_URL, BACKDROP_SIZE, POSTER_SIZE } from "../config.js";
 
   //Components
   import Hero from "../components/Hero.svelte";
@@ -23,7 +23,7 @@
       isLoading = true;
       error = false;
       movie = await fetchMovies(movie, loadMore, searchTerm);
-      console.log("movie:", movie);
+      isLoading = false;
     } catch (error) {
       error = true;
     }
@@ -34,6 +34,8 @@
     movie.movies = [];
     handleFetchMovies(false, searchTerm);
   };
+
+  const handleLoadMore = () => handleFetchMovies(true, searchTerm);
 
   onMount(async () => {
     handleFetchMovies(false, searchTerm);
@@ -51,15 +53,24 @@
 {/if}
 <Search on:search={handleSearch} />
 <Grid heading={searchTerm ? "Search Result" : "Popular"}>
-  <div>1</div>
-  <div>1</div>
-  <div>1</div>
-  <div>1</div>
-  <div>1</div>
+  {#each movie.movies as movie}
+    <Thumb
+      clickable
+      image={movie.poster_path
+        ? IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path
+        : ""}
+      movieId={movie.id}
+    />
+  {/each}
 </Grid>
-<Thumb />
-<LoadMoreButton />
-<Spinner />
+
+{#if isLoading}
+  <Spinner />
+{/if}
+
+{#if !isLoading && movie.currentPage < movie.totalPages}
+  <LoadMoreButton on:loadMore={handleLoadMore}>Load More</LoadMoreButton>
+{/if}
 
 <style>
 </style>

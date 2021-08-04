@@ -3,13 +3,16 @@
 </script>
 
 <div class="content">
-  <img src={svelteLogo} alt="Svelte Logo" class="svelte-logo" />
-  <h1>Svelte Movie</h1>
+  <a href="https://svelte.dev/" target="_blank"
+    ><img src={svelteLogo} alt="Svelte Logo" class="svelte-logo" /></a
+  >
+
+  <a href="/"> <h1>Svelte Movies</h1></a>
 </div>
 
 <style>
   .content {
-    padding: 0 20px;
+    padding: 10px 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -23,8 +26,16 @@
   .svelte-logo {
     width: 50px;
     height: 50px;
+    padding-right: 10px;
+    display: inline;
   }
-
+  a {
+    text-decoration: none;
+    color: azure;
+  }
+  h1 {
+    display: inline;
+  }
   @media screen and (max-width: 500px) {
     .content {
       max-width: 1280px;
@@ -34,8 +45,8 @@
       font-size: 25px;
     }
     .svelte-logo {
-    width: 40px;
-    height: 40px;
-  }
+      width: 40px;
+      height: 40px;
+    }
   }
 </style>

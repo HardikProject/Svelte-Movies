@@ -1,7 +1,7 @@
 <script>
 </script>
 
-Spinner
+<div class="wrapper"/>
 
 <style>
   .wrapper {
