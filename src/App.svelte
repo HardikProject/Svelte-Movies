@@ -24,7 +24,17 @@
 
 <Header />
 
-<svelte:component this={page} {params} />
+{#if page==Home}
+  <Home/>
+{/if}
+
+{#if page==Movie}
+  <Movie {params} />
+{/if}
+
+{#if page==NotFound}
+  <NotFound/>
+{/if}
 
 <style>
   :global(body) {
