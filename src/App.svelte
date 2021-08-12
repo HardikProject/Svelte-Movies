@@ -22,6 +22,15 @@
   router.start();
 </script>
 
+<svelte:head>
+	<title>Svelte Movies</title>
+	<meta name="robots" content="noindex nofollow" />
+	<html lang="en" />
+  <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Svelte Movies is movie related web page.It is build with svelte framwork.🚀"/>
+</svelte:head>
+
 <Header />
 
 {#if page==Home}
