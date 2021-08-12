@@ -44,4 +44,10 @@
   .clickable {
     cursor: pointer;
   }
+
+  @media screen and (max-width: 768px) {
+    img{
+      border-radius: 10px;
+    }
+  }
 </style>
