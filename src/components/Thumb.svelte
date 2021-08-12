@@ -16,7 +16,7 @@
       /></a
     >
   {:else}
-    <img src={noImage} alt="Movie Thumb" />
+    <img src={image ? image : noImage} alt="Movie Thumb" />
   {/if}
 </div>
 
@@ -38,6 +38,7 @@
     /* opacity: 0.8; */
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 2px, rgb(51, 51, 51) 0px 0px 0px 1px;
     transform: scale(1.02);
+    cursor: pointer;
   }
 
   .clickable {

@@ -1,14 +1,22 @@
 <script>
+  import {IMAGE_BASE_URL,POSTER_SIZE} from '../config.js'
+
+  export let actor;
+  const noImage = '/images/no_image.jpg'
 </script>
 
-Actor
+<div class="wrapper">
+  <img src={actor.profile_path ? `${IMAGE_BASE_URL}${POSTER_SIZE}${actor.profile_path}` : noImage} alt="">
+  <span class="name">{actor.name}</span>
+  <span class="character">{actor.character}</span>
+</div>
 
 <style>
   .wrapper {
     color: #fff;
     background: #1c1c1c;
     border-radius: 20px;
-    padding: 5px;
+    padding: 3px;
     text-align: center;
   }
 

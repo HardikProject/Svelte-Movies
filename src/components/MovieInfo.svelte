@@ -1,7 +1,46 @@
 <script>
+  //Components
+  import Thumb from "./Thumb.svelte";
+  //Config
+  import { IMAGE_BASE_URL, BACKDROP_SIZE, POSTER_SIZE } from "../config.js";
+
+  const noImage = "/images/no_image.jpg";
+  export let movie;
 </script>
 
-MovieInfo
+<div
+  class="wrapper"
+  style="--backdrop:{movie.backdrop_path
+    ? `url(${IMAGE_BASE_URL}${BACKDROP_SIZE}${movie.backdrop_path})`
+    : '#000'}"
+>
+  <div class="content">
+    <div class="thumb">
+      <Thumb
+        image={movie.poster_path
+          ? `${IMAGE_BASE_URL}${POSTER_SIZE}${movie.poster_path}`
+          : noImage}
+      />
+    </div>
+    <div class="text">
+      <h1>{movie.title}</h1>
+      <h3>PLOT</h3>
+      <p>{movie.overview}</p>
+      <div class="rating-director">
+        <div>
+          <h3>IMDB RATING</h3>
+          <p class="score">{movie.vote_average}</p>
+        </div>
+        <div class="director">
+          <h3>DIRECTOR{movie.directors.length > 1 ? "S" : ""}</h3>
+          {#each movie.directors as director}
+            <p>{director.name}</p>
+          {/each}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <style>
   .wrapper {

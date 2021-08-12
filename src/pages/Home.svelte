@@ -23,10 +23,10 @@
       isLoading = true;
       error = false;
       movie = await fetchMovies(movie, loadMore, searchTerm);
-      isLoading = false;
     } catch (error) {
       error = true;
     }
+    isLoading = false;
   };
 
   const handleSearch = (event) => {

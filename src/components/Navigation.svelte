@@ -1,7 +1,14 @@
 <script>
+  export let movie;
 </script>
 
-Navigation
+<div class="wrapper">
+  <div class="content">
+    <a href="/"><p>Home</p></a>
+    <p>|</p>
+    <p>{movie}</p>
+  </div>
+</div>
 
 <style>
   .wrapper {
@@ -29,6 +36,9 @@ Navigation
   }
 
   @media screen and (max-width: 768px) {
+    .wrapper {
+      height: 50px;
+    }
     p {
       font-size: 16px;
     }
