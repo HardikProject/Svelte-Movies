@@ -3,8 +3,8 @@
 </script>
 
 <div class="content">
-  <a href="https://svelte.dev/" target="_blank"
-    ><img src={svelteLogo} alt="Svelte Logo" class="svelte-logo" /></a
+  <a href="https://svelte.dev/" rel="noreferrer" target="_blank"
+    ><img src={svelteLogo}  alt="Svelte Logo" class="svelte-logo" /></a
   >
 
   <a href="/"> <h1>Svelte Movies</h1></a>
