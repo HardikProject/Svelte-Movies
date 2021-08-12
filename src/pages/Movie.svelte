@@ -27,8 +27,19 @@
   };
 
   onMount((async) => {
-    handleGetMovieDetails();
+    const localMovie = window.localStorage.getItem(params.id)
+    if (localMovie) {
+      movie = JSON.parse(localMovie);
+    } else {
+      handleGetMovieDetails();
+    }
   });
+
+  $:{
+    if (movie) {
+      window.localStorage.setItem(params.id,JSON.stringify(movie));
+    }
+  }
 </script>
 
 {#if error}
